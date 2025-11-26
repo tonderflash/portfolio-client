@@ -1,0 +1,240 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ColorShifter Educational UI Styles
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Technical Info Section */
+.technical-info-section {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.info-header h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.info-subtitle {
+  margin: 0;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* Performance Metrics */
+.performance-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.metric:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Technical Details Container */
+.technical-details {
+  margin: 1.5rem 0;
+}
+
+/* Technical Detail Accordion */
+.technical-detail {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.technical-detail:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.technical-detail-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.technical-detail-header:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.technical-detail-icon {
+  font-size: 0.75rem;
+  color: #6366f1;
+  transition: transform 0.2s ease;
+  min-width: 12px;
+  display: inline-block;
+}
+
+.technical-detail-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.technical-detail-content {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  animation: slideDown 0.3s ease;
+}
+
+/* Nested technical details (inside master dropdown) */
+.technical-info-section .technical-detail .technical-detail-content {
+  padding-left: 2.5rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.technical-detail-content p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.technical-detail-content ul,
+.technical-detail-content ol {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.technical-detail-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+/* Code Example */
+.code-example {
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid #6366f1;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Courier New', Consolas, Monaco, monospace;
+}
+
+.code-example code {
+  color: #a5b4fc;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  display: block;
+}
+
+/* GitHub Links */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6366f1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.github-link:hover {
+  color: #a855f7;
+  transform: translateX(4px);
+}
+
+.github-link::before {
+  content: '→';
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.github-link:hover::before {
+  transform: translateX(2px);
+}
+
+/* Primary GitHub Link */
+.service-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.github-link-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.github-link-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Demo Controls */
+.demo-controls h4 {
+  margin: 0 0 1rem 0;
+  text-align: left;
+  font-size: 1.25rem;
+}
