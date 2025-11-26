@@ -59,7 +59,51 @@ export default function LanguageDetectorDemo() {
             {/* Demo controls */}
             <div className="demo-controls">
                 <div className="control-group">
+                    <label>Quick Test:</label>
+                    <div className="quick-test-buttons" style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                        <button
+                            className="btn btn-outline"
+                            onClick={() => setText("In the beginning God created the heaven and the earth.")}
+                            style={{ fontSize: '0.85rem', padding: '0.25rem 0.75rem' }}
+                        >
+                            🇺🇸 English
+                        </button>
+                        <button
+                            className="btn btn-outline"
+                            onClick={() => setText("En el principio creó Dios los cielos y la tierra.")}
+                            style={{ fontSize: '0.85rem', padding: '0.25rem 0.75rem' }}
+                        >
+                            🇪🇸 Español
+                        </button>
+                        <button
+                            className="btn btn-outline"
+                            onClick={() => setText("Voy a parkear el carro antes de ir al party.")}
+                            style={{ fontSize: '0.85rem', padding: '0.25rem 0.75rem' }}
+                        >
+                            🌮 Spanglish
+                        </button>
+                        <button
+                            className="btn btn-outline"
+                            onClick={() => setText("No")}
+                            style={{ fontSize: '0.85rem', padding: '0.25rem 0.75rem', borderColor: 'var(--color-warning)', color: 'var(--color-warning)' }}
+                            title="Click to see why short text fails"
+                        >
+                            ⚠️ Short Text
+                        </button>
+                    </div>
+
                     <label>Text to analyze:</label>
+                    <div className="info-note" style={{
+                        marginBottom: '0.75rem',
+                        fontSize: '0.85rem',
+                        color: 'var(--color-text-muted)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        padding: '0.75rem',
+                        borderRadius: '4px',
+                        borderLeft: '3px solid var(--color-warning)'
+                    }}>
+                        <strong>ℹ️ Note:</strong> This model was trained exclusively on biblical data. It may incorrectly detect languages or be confused by modern vocabulary not present in the training set.
+                    </div>
                     <textarea
                         className="input"
                         value={text}
