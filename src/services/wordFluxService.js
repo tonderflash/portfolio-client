@@ -96,6 +96,7 @@ export const analyzeRawTexts = async (textArray, topN = 10) => {
  * Exporta todas las funciones relacionadas con el análisis de palabras
  */
 const wordFluxService = {
+  analyze: analyzeText, // Alias principal
   analyzeText,
   analyzeFiles,
   analyzeRawTexts,

@@ -351,3 +351,4 @@ detectLanguage('Hola mundo')
 
 5. **Rate Limiting**: No hay límite configurado actualmente, pero se recomienda implementar throttling en el cliente para evitar abusos
 
+

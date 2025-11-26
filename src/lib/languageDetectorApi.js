@@ -76,3 +76,4 @@ export async function detectLanguage(text, threshold = 40.0) {
   }
 }
 
+

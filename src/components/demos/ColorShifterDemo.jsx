@@ -1,29 +1,7 @@
 import { useState } from 'react';
+import { TechnicalDetail } from '../TechnicalDetail';
 import { colorShifterService } from '../../services';
 import './ColorShifterDemo.css';
-
-// Componente de acordeón reutilizable
-function TechnicalDetail({ title, children, defaultOpen = false }) {
-    const [isOpen, setIsOpen] = useState(defaultOpen);
-
-    return (
-        <div className="technical-detail">
-            <button
-                className="technical-detail-header"
-                onClick={() => setIsOpen(!isOpen)}
-                aria-expanded={isOpen}
-            >
-                <span className="technical-detail-icon">{isOpen ? '▼' : '▶'}</span>
-                <span className="technical-detail-title">{title}</span>
-            </button>
-            {isOpen && (
-                <div className="technical-detail-content">
-                    {children}
-                </div>
-            )}
-        </div>
-    );
-}
 
 export default function ColorShifterDemo() {
     const [mode, setMode] = useState('rgb-to-hsv');
