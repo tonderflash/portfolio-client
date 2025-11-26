@@ -56,6 +56,13 @@ export const detectLanguage = async (text, spanglishThreshold = 40.0) => {
  */
 const languageDetectorService = {
   detectLanguage,
+  /**
+   * Adaptador para mantener compatibilidad con el componente demo
+   * @param {Object} params
+   * @param {string} params.text
+   * @param {number} [params.threshold]
+   */
+  detect: ({ text, threshold }) => detectLanguage(text, threshold),
 };
 
 export default languageDetectorService;
