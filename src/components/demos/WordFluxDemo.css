@@ -290,3 +290,206 @@
   text-align: left;
   font-size: 1.25rem;
 }
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 768px) {
+  /* Technical Info Section */
+  .technical-info-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-header h4 {
+    font-size: 1.25rem;
+  }
+
+  .info-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Performance Metrics */
+  .performance-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .metric {
+    padding: 0.75rem;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+  }
+
+  /* Technical Details */
+  .technical-detail-header {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .technical-detail-content {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Nested technical details */
+  .technical-info-section .technical-detail .technical-detail-content {
+    padding-left: 1.5rem;
+  }
+
+  /* Code Example */
+  .code-example {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    overflow-x: auto;
+  }
+
+  .code-example code {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Lambda Specs Standalone */
+  .lambda-specs-standalone {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .lambda-specs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .lambda-spec-item {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .lambda-spec-label {
+    font-size: 0.75rem;
+  }
+
+  .lambda-spec-value {
+    font-size: 0.75rem;
+  }
+
+  /* GitHub Links */
+  .github-link {
+    font-size: 0.85rem;
+  }
+
+  .github-link-primary {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Service Link */
+  .service-link {
+    margin-top: 1rem;
+  }
+
+  /* Result Container */
+  .result-container {
+    padding: 1rem;
+  }
+
+  .result-container h5 {
+    font-size: 0.95rem;
+  }
+
+  .result-grid {
+    gap: 0.75rem;
+  }
+
+  .result-item {
+    font-size: 0.9rem;
+  }
+
+  .result-item strong {
+    font-size: 0.85rem;
+  }
+
+  .result-item span {
+    font-size: 1rem;
+  }
+
+  /* Loading Container */
+  .loading-container {
+    padding: 1rem !important;
+  }
+
+  .loading-container h4 {
+    font-size: 1rem !important;
+  }
+
+  .loading-container p {
+    font-size: 1.25rem !important;
+  }
+
+  /* Word List */
+  .result-container ul {
+    columns: 1 !important;
+    font-size: 0.9rem;
+  }
+
+  .result-container li {
+    break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Technical Info Section */
+  .technical-info-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .info-header h4 {
+    font-size: 1.1rem;
+  }
+
+  /* Performance Metrics */
+  .performance-metrics {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  /* Lambda Specs */
+  .lambda-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lambda-spec-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Technical Detail */
+  .technical-detail-header {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .technical-detail-content {
+    padding: 0 0.75rem 0.75rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .technical-info-section .technical-detail .technical-detail-content {
+    padding-left: 1rem;
+  }
+}

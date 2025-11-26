@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ColorShifterDemo from './demos/ColorShifterDemo';
 import LanguageDetectorDemo from './demos/LanguageDetectorDemo';
 import WordFluxDemo from './demos/WordFluxDemo';
+import MatrixOracleDemo from './demos/MatrixOracleDemo';
 
 const projects = [
     {
@@ -51,6 +52,22 @@ const projects = [
                 'Top N palabras más frecuentes'
             ]
         }
+    },
+    {
+        id: 'matrix-oracle',
+        name: 'Matrix Oracle',
+        icon: '🔮',
+        description: 'Análisis matemático: descubriendo el patrón de Morton en una matriz hexadecimal',
+        tech: ['Python', 'Análisis Matemático', 'Bitwise Operations', 'Morton Code'],
+        apiInfo: {
+            endpoint: 'N/A - Análisis de investigación',
+            features: [
+                'Análisis de patrones en matrices hexadecimales',
+                'Descubrimiento de fórmula matemática pura',
+                'Implementación sin condicionales (branchless)',
+                'Relación con curvas Z-order/Morton'
+            ]
+        }
     }
 ];
 
@@ -69,6 +86,8 @@ export default function ProjectList() {
                 return <LanguageDetectorDemo />;
             case 'word-flux':
                 return <WordFluxDemo />;
+            case 'matrix-oracle':
+                return <MatrixOracleDemo />;
             default:
                 return null;
         }
@@ -102,34 +121,59 @@ export default function ProjectList() {
                         {/* Dropdown Content */}
                         {isExpanded && (
                             <div className="project-content">
-                                {/* API Info */}
-                                <div className="api-info-section">
-                                    <h4>📡 API Information</h4>
-                                    <div className="api-endpoint">
-                                        <code>{project.apiInfo.endpoint}</code>
-                                    </div>
+                                {/* API Info - Only show if not matrix-oracle */}
+                                {project.id !== 'matrix-oracle' && (
+                                    <div className="api-info-section">
+                                        <h4>📡 API Information</h4>
+                                        <div className="api-endpoint">
+                                            <code>{project.apiInfo.endpoint}</code>
+                                        </div>
 
-                                    <div className="tech-stack">
-                                        {project.tech.map((tech) => (
-                                            <span key={tech} className="badge">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    <div className="features-list">
-                                        <h5>Features:</h5>
-                                        <ul>
-                                            {project.apiInfo.features.map((feature, idx) => (
-                                                <li key={idx}>{feature}</li>
+                                        <div className="tech-stack">
+                                            {project.tech.map((tech) => (
+                                                <span key={tech} className="badge">
+                                                    {tech}
+                                                </span>
                                             ))}
-                                        </ul>
+                                        </div>
+
+                                        <div className="features-list">
+                                            <h5>Features:</h5>
+                                            <ul>
+                                                {project.apiInfo.features.map((feature, idx) => (
+                                                    <li key={idx}>{feature}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
+
+                                {/* Tech Stack for matrix-oracle */}
+                                {project.id === 'matrix-oracle' && (
+                                    <div className="api-info-section">
+                                        <h4>🔬 Investigación y Análisis</h4>
+                                        <div className="tech-stack">
+                                            {project.tech.map((tech) => (
+                                                <span key={tech} className="badge">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <div className="features-list">
+                                            <h5>Características del Análisis:</h5>
+                                            <ul>
+                                                {project.apiInfo.features.map((feature, idx) => (
+                                                    <li key={idx}>{feature}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                )}
 
                                 {/* Demo Section */}
                                 <div className="demo-section">
-                                    <h4>🧪 Try it out</h4>
+                                    <h4>{project.id === 'matrix-oracle' ? '📖 El Viaje del Descubrimiento' : '🧪 Try it out'}</h4>
                                     {renderDemo(project.id)}
                                 </div>
                             </div>
